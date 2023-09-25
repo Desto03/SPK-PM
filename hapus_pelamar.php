@@ -15,6 +15,6 @@ if (isset($_GET['aa'])) {
     	echo "<script>alert('Error');window.history.go(-1);</script>";
     }
 }
-
+// ,m,m,m
 $koneksi->close();
 ?>
