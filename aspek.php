@@ -2,7 +2,7 @@
 		<a href="home.php?page=tambah_aspek">
 			<button style="margin-bottom: 20px;" class="btn btn-primary"> <i class="fa fa-plus"></i> Tambah Data </button>
 		</a>
-
+<!-- kefkkfjvgjf -->
 		<table id="example" class="table table-striped table-bordered" style="width:100%">
 	    	<thead>
 	    		<tr>
