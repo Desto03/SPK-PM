@@ -164,6 +164,9 @@ if (empty($_SESSION['id_user'])) {
                   case 'gantipassword':
                     echo "Ganti Password";
                     break;
+                  case 'jadwal':
+                    echo "jadwal wawancara";
+                    break;
                 }
               } else {
                 echo "Home";
@@ -212,6 +215,9 @@ if (empty($_SESSION['id_user'])) {
                   break;
                 case 'gantipassword':
                   include "gantipassword.php";
+                  break;
+                case 'jadwal':
+                  include "jadwal.php";
                   break;
               }
             } else {

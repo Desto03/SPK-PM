@@ -50,6 +50,13 @@
               Ganti Password
             </a>
           </li>
+          </li>
+           <li class="nav-item">
+            <a class="nav-link" href="?page=jadwal">
+              <span class="fas fa-lock" style="font-size:14px "></span>
+              jadwal wawancara
+            </a>
+          </li>
           
         </ul>
       </div>
