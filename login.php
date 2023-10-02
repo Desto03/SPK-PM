@@ -85,7 +85,7 @@ include "koneksi.php";
     } else {
 
       $_SESSION['err'] = '<strong>FAILED!</strong> Username atau Password salah.';
-      header('Location: ./');
+      header('Location: ./login.php');
       die();
     }
   } else {

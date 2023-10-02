@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 25 Sep 2023 pada 05.28
--- Versi server: 10.4.28-MariaDB
--- Versi PHP: 8.2.4
+-- Generation Time: Sep 28, 2023 at 02:53 PM
+-- Server version: 10.4.28-MariaDB
+-- PHP Version: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,7 +24,21 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `master_pelamar`
+-- Table structure for table `jadwal`
+--
+
+CREATE TABLE `jadwal` (
+  `id_wwc` int(100) NOT NULL,
+  `nama_pelamar` varchar(100) NOT NULL,
+  `no_hp` varchar(20) NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `jadwal` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `master_pelamar`
 --
 
 CREATE TABLE `master_pelamar` (
@@ -35,7 +49,7 @@ CREATE TABLE `master_pelamar` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data untuk tabel `master_pelamar`
+-- Dumping data for table `master_pelamar`
 --
 
 INSERT INTO `master_pelamar` (`id_pelamar`, `nama_pelamar`, `no_hp`, `email`) VALUES
@@ -47,7 +61,7 @@ INSERT INTO `master_pelamar` (`id_pelamar`, `nama_pelamar`, `no_hp`, `email`) VA
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `master_user`
+-- Table structure for table `master_user`
 --
 
 CREATE TABLE `master_user` (
@@ -63,7 +77,7 @@ CREATE TABLE `master_user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data untuk tabel `master_user`
+-- Dumping data for table `master_user`
 --
 
 INSERT INTO `master_user` (`id_user`, `username`, `nama`, `password`, `level`, `dibuat_oleh`, `tgl_dibuat`, `diubah_oleh`, `tgl_diubah`) VALUES
@@ -72,7 +86,7 @@ INSERT INTO `master_user` (`id_user`, `username`, `nama`, `password`, `level`, `
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `pm_aspek`
+-- Table structure for table `pm_aspek`
 --
 
 CREATE TABLE `pm_aspek` (
@@ -84,7 +98,7 @@ CREATE TABLE `pm_aspek` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data untuk tabel `pm_aspek`
+-- Dumping data for table `pm_aspek`
 --
 
 INSERT INTO `pm_aspek` (`id_aspek`, `aspek`, `prosentase`, `bobot_core`, `bobot_secondary`) VALUES
@@ -95,7 +109,7 @@ INSERT INTO `pm_aspek` (`id_aspek`, `aspek`, `prosentase`, `bobot_core`, `bobot_
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `pm_bobot`
+-- Table structure for table `pm_bobot`
 --
 
 CREATE TABLE `pm_bobot` (
@@ -105,7 +119,7 @@ CREATE TABLE `pm_bobot` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data untuk tabel `pm_bobot`
+-- Dumping data for table `pm_bobot`
 --
 
 INSERT INTO `pm_bobot` (`selisih`, `bobot`, `keterangan`) VALUES
@@ -122,7 +136,7 @@ INSERT INTO `pm_bobot` (`selisih`, `bobot`, `keterangan`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `pm_faktor`
+-- Table structure for table `pm_faktor`
 --
 
 CREATE TABLE `pm_faktor` (
@@ -134,7 +148,7 @@ CREATE TABLE `pm_faktor` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data untuk tabel `pm_faktor`
+-- Dumping data for table `pm_faktor`
 --
 
 INSERT INTO `pm_faktor` (`id_faktor`, `id_aspek`, `faktor`, `target`, `type`) VALUES
@@ -154,7 +168,7 @@ INSERT INTO `pm_faktor` (`id_faktor`, `id_aspek`, `faktor`, `target`, `type`) VA
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `pm_ranking`
+-- Table structure for table `pm_ranking`
 --
 
 CREATE TABLE `pm_ranking` (
@@ -163,7 +177,7 @@ CREATE TABLE `pm_ranking` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data untuk tabel `pm_ranking`
+-- Dumping data for table `pm_ranking`
 --
 
 INSERT INTO `pm_ranking` (`id_pelamar`, `nilai_akhir`) VALUES
@@ -179,7 +193,7 @@ INSERT INTO `pm_ranking` (`id_pelamar`, `nilai_akhir`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `pm_sample`
+-- Table structure for table `pm_sample`
 --
 
 CREATE TABLE `pm_sample` (
@@ -190,7 +204,7 @@ CREATE TABLE `pm_sample` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data untuk tabel `pm_sample`
+-- Dumping data for table `pm_sample`
 --
 
 INSERT INTO `pm_sample` (`id_sample`, `id_pelamar`, `id_faktor`, `value`) VALUES
@@ -272,71 +286,83 @@ INSERT INTO `pm_sample` (`id_sample`, `id_pelamar`, `id_faktor`, `value`) VALUES
 --
 
 --
--- Indeks untuk tabel `master_pelamar`
+-- Indexes for table `jadwal`
+--
+ALTER TABLE `jadwal`
+  ADD PRIMARY KEY (`id_wwc`);
+
+--
+-- Indexes for table `master_pelamar`
 --
 ALTER TABLE `master_pelamar`
   ADD PRIMARY KEY (`id_pelamar`);
 
 --
--- Indeks untuk tabel `master_user`
+-- Indexes for table `master_user`
 --
 ALTER TABLE `master_user`
   ADD PRIMARY KEY (`id_user`);
 
 --
--- Indeks untuk tabel `pm_aspek`
+-- Indexes for table `pm_aspek`
 --
 ALTER TABLE `pm_aspek`
   ADD PRIMARY KEY (`id_aspek`);
 
 --
--- Indeks untuk tabel `pm_bobot`
+-- Indexes for table `pm_bobot`
 --
 ALTER TABLE `pm_bobot`
   ADD PRIMARY KEY (`selisih`);
 
 --
--- Indeks untuk tabel `pm_faktor`
+-- Indexes for table `pm_faktor`
 --
 ALTER TABLE `pm_faktor`
   ADD PRIMARY KEY (`id_faktor`);
 
 --
--- Indeks untuk tabel `pm_sample`
+-- Indexes for table `pm_sample`
 --
 ALTER TABLE `pm_sample`
   ADD PRIMARY KEY (`id_sample`);
 
 --
--- AUTO_INCREMENT untuk tabel yang dibuang
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT untuk tabel `master_pelamar`
+-- AUTO_INCREMENT for table `jadwal`
+--
+ALTER TABLE `jadwal`
+  MODIFY `id_wwc` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `master_pelamar`
 --
 ALTER TABLE `master_pelamar`
   MODIFY `id_pelamar` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
--- AUTO_INCREMENT untuk tabel `master_user`
+-- AUTO_INCREMENT for table `master_user`
 --
 ALTER TABLE `master_user`
   MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT untuk tabel `pm_aspek`
+-- AUTO_INCREMENT for table `pm_aspek`
 --
 ALTER TABLE `pm_aspek`
   MODIFY `id_aspek` tinyint(3) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
--- AUTO_INCREMENT untuk tabel `pm_faktor`
+-- AUTO_INCREMENT for table `pm_faktor`
 --
 ALTER TABLE `pm_faktor`
   MODIFY `id_faktor` tinyint(3) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
--- AUTO_INCREMENT untuk tabel `pm_sample`
+-- AUTO_INCREMENT for table `pm_sample`
 --
 ALTER TABLE `pm_sample`
   MODIFY `id_sample` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=585;
