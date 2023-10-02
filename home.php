@@ -96,7 +96,11 @@ if (empty($_SESSION['id_user'])) {
                     echo "Ganti Password";
                     break;
                   case 'jadwal':
+<<<<<<< HEAD
                     echo "Jadwal Wawancara";
+=======
+                    echo "jadwal wawancara";
+>>>>>>> 8eed230fd6edd9b2c8369ec920dca23857f7f04a
                     break;
                 }
               } else {
@@ -150,6 +154,7 @@ if (empty($_SESSION['id_user'])) {
                 case 'jadwal':
                   include "jadwal.php";
                   break;
+<<<<<<< HEAD
                 case 'tambah_jadwal':
                   include "tambah_jadwal.php";
                   break;
@@ -162,6 +167,8 @@ if (empty($_SESSION['id_user'])) {
                 case 'hasilakhir':
                   include "hasilakhir.php";
                   break;
+=======
+>>>>>>> 8eed230fd6edd9b2c8369ec920dca23857f7f04a
               }
             } else {
             ?>
