@@ -5,7 +5,7 @@
             <div class="col-sm-6 offset-sm-3">
                 <div class="form-group">
                     <label>Nama Pelamar</label>
-                    <input type="text" name="nama_pelamar" id="nama_pelamar" class="form-control" required="true">
+                    <input type="text" name="nama_pelamar" id="nama_pelamar" class="form-control" required="true" autocomplete="off">
                 </div>
                 <div class="form-group">
                     <label>No Handphone</label>
